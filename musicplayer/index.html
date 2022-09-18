@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music player</title>
+</head>
+
+<style>
+
+    *{
+        margin: 0px;
+        padding: 0px;
+        background-color: azure;
+    }
+
+    .container{
+        background-image: linear-gradient(to right, rgb(62, 174, 255), rgb(217, 217, 217));
+        display: flex;
+        align-items: center;
+
+    }
+    #sidePanal{
+        background-image: linear-gradient(to right, rgb(86, 86, 86), rgb(217, 217, 217));
+        height: 100vh;
+        width: 30vw;
+        /* border-right: solid; */
+        margin-right: 200px;
+        /* background-color: antiquewhite; */
+    }
+    #player{
+        /* background-color: aquamarine; */
+        background-image: radial-gradient(rgb(211, 255, 80) , rgb(228, 91, 255));
+        border: 10px solid grey;
+        width: 350px;
+        height: 350px;
+        border-radius: 40px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+
+    #player > img{
+        width: 150px;
+        height: 150px;
+    }
+
+    #player > img, #player > h3, #player > p , #player > audio{
+        background-color: rgba(240, 248, 255, 0);
+    }
+
+    .playlistItem{
+        display: flex;
+        margin: 10px;
+        align-items: center;
+        padding: 10px 5px;
+        border-radius: 20px;
+    }
+
+    .itemImg{
+        border-radius: 10px;
+        margin-left: 10px;
+        width: 50px;
+        height: 50px;
+        margin-right: 15px;
+    }
+
+    .playlistItem > div{
+        background-color: rgba(255, 228, 196, 0);
+    }
+
+
+    .itemArtist{
+        margin-top: 3px;
+        font-size: small;
+        color: grey;
+    }
+
+    .itemTitle , .itemArtist{
+        background-color: rgba(0, 0, 0, 0);
+    }
+
+    #playerOut{
+        background-color: rgba(255, 255, 255, 0);
+        display: flex;
+        align-items: center;
+    }
+
+    .button{
+        font-size: x-large;
+        margin: 20px;
+        height: auto;
+        width: auto;
+        color: white;
+        background-color: rgb(0, 48, 48);
+        /* padding: 20px 20px 30px 20px; */
+        padding: 10px 16px;
+        border-radius: 100px;
+        cursor: pointer;
+    }
+
+</style>
+
+<body>
+    
+    <div class="container">
+        <div id="sidePanal">
+
+        </div>
+        <div id="playerOut">
+            <div class='button' onclick="playPrev()"> < </div>
+            <div id="player">
+
+                <img src="" alt="" id="songImg">
+                <h3 id="songTitle"></h3>
+                <p id="artistName"></p>
+                <audio controls autoplay>
+                    <source id = 'source' src="" type="audio/mpeg">
+                </audio>
+
+            </div>
+            <div class='button' onclick="playNext()"> > </div>
+        </div>
+    </div>
+
+</body>
+
+<script src="musicPlayer.js"></script>
+</html>
